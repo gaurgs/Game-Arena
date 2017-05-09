@@ -1,0 +1,8 @@
+.btns input{
+    margin-right:5px;
+    margin-bottom:3px;
+}
+
+.col-lg-4:nth-child(3n+1){
+    clear: left;
+}

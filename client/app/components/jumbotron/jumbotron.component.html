@@ -1,0 +1,50 @@
+<div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+          	<div *ngFor="let item of platformCategories">
+          		<a href="#" class="list-group-item">{{item._id}}<span class="badge">{{item.num}}</span></a>
+          	</div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+            <h3>Search&nbsp;<span>Arena</span></h3>
+            <div class="row">
+			  <div class="col-lg-9">
+			    <div class="input-group">
+			      <input type="text" class="form-control" [(ngModel)]="queryString" placeholder="Search by Platforms..." >
+  			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button" (click)="searchByName()">Go!</button>
+			      </span>
+			    </div>
+			  </div>
+		  	</div>
+          </div>
+
+          	<nav aria-label="...">
+			  <ul class="pager">
+			    <li class="previous" (click)="getPlatformCategory(count+1)"><a href="#">Previous</a></li>
+			    <li class="next" (click)="getPlatformCategory(count-1)"><a href="#">Next</a></li>
+			  </ul>
+			</nav>
+
+          <div class="row">
+            <div class="col-xs-6 col-lg-4"  *ngFor="let item of items;let i = index">
+             	<div class="card" style="width: 20rem;">
+				  <div class="card-block">
+				    <h4 class="card-title"><strong>{{item.title}}</strong></h4>
+				    <strong>Platform: </strong><span>{{item.platform}}</span><br/>
+	                <strong>Generes: </strong><span>{{item.genre}}</span><br/>
+	                <strong>Editor Choice: </strong><span>{{item.editors_choice}}</span><br/>
+	                <strong>Rating: </strong><span class="label label-success left">{{item.score}}<span class="glyphicon glyphicon-star" aria-hidden="true"></span></span>
+				  </div>
+				</div>
+            </div>
+          </div>
+        </div>
+      </div>
